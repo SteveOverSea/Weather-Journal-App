@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+}
+
+body {
+    position: relative;
+    background-color: #008080;
+    color: #fff;
+    font-size: 1em;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    margin: 50vh 0 0 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.heading {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.input {
+    width: 80%;
+    border-radius: 2rem;
+    border: 2px solid #FFF;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    font-weight: 700;
+}
+
+    .input::placeholder {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #000;
+        opacity: 0.6;
+    }
+
+    input[type="text"].input {
+        height: 1rem;
+    }
+
+    textarea.input {
+        height: 4rem;
+    }
+
+    button.input {
+        background-color: #f29761;
+        width: 25%;
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+        button.input:hover {
+            background-color: #FFF;
+            color: #f29761;
+        }
+
+.hint {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.7rem;
+    color: #fff;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+#error {
+    color: #ff0000;
+    background-color: #fff;
+    width: max-content;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hide {
+    display: none;
+}
+
+#entryHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#date, #temp, #content {
+    padding: 0.5rem;
+    
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase; 
+    font-size: 0.65rem;
+}
+    
+    .link:hover {
+        color: #f29761;
+    }
