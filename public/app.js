@@ -13,6 +13,7 @@ const noInputError = new Error("No input provided.");
 
 // API CONFIGURATION
 const apiKey = "b43aef2392276c6a2438fc4ead2ce557";
+const units = "metric";
 const apiBaseUrl ="http://api.openweathermap.org/data/2.5/weather";
 const country = "at";
 
@@ -20,7 +21,7 @@ generateBtn.addEventListener("click", generateWeatherData);
 
 async function generateWeatherData (e) {
     const zip = inputZip.value;
-    const apiUrl = `${apiBaseUrl}?zip=${zip},${country}&appid=${apiKey}&lang=de`;
+    const apiUrl = `${apiBaseUrl}?zip=${zip},${country}&units=${units}&appid=${apiKey}&lang=de`;
 
     try {
         if (!inputZip.value || !inputZip.value) throw noInputError;
@@ -31,7 +32,7 @@ async function generateWeatherData (e) {
 
         const dataEntry = {
             date: new Date().toLocaleDateString("de-De"),
-            temp: kelvinToCelsius(responseData.main.temp) + "°C",
+            temp: responseData.main.temp + "°C",
             feeling: inputFeeling.value
         };
 
@@ -68,10 +69,6 @@ async function getData(url) {
     const getResponse = await fetch(url);
     return await getResponse.json();
 }
-
-function kelvinToCelsius (temp) {
-    return Math.round(temp - 273.15);
-} 
 
 function updateUI (entry) {
     // clear entries before adding content
